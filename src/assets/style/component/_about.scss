@@ -1,0 +1,88 @@
+.about {
+  & .yellow-box {
+    background-color: $pale-yellow;
+  }
+
+  &__text {
+    padding-top: calc(rem(50) + $nb-height);
+    padding-inline: $padding-x;
+    padding-bottom: rem(45);
+
+    @include container;
+    @include for-desktop-up {
+      padding-inline: 0;
+    }
+
+    & .wrapper {
+      margin-bottom: rem(16);
+      gap: rem(24);
+
+      @include for-desktop-up {
+        flex-direction: row;
+        align-items: last baseline;
+        gap: rem(80);
+      }
+    }
+
+    & h1 {
+      @include font-size-x;
+      color: $white;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    & p {
+      @include font-size($fs-s, $fs-m);
+      line-height: 1.8;
+    }
+  }
+
+  & h2 {
+    @include font-size($fs-s, $fs-m);
+    font-family: $ff-opensans;
+    letter-spacing: clamp(3px, 1vw, 6px);
+    text-transform: uppercase;
+  }
+
+  &__box {
+    display: grid;
+    padding: rem(70) $padding-x;
+
+    @include for-desktop-up {
+      grid-template-columns: repeat(3fr);
+      grid-template-rows: repeat(4fr);
+    }
+  }
+}
+
+.profile {
+  width: clamp(rem(247), 3vw, rem(347));
+  max-width: 100%;
+  margin-inline: auto;
+
+  &__img {
+    width: rem(64);
+    height: rem(64);
+    background-color: $white;
+    outline: 12px solid $pale-yellow;
+    border-radius: rem(30);
+  }
+
+  &__detail {
+    & > * {
+      padding-inline: rem(22);
+    }
+
+    & .name {
+      position: relative;
+      @include font-size(rem(16), rem(28));
+      font-family: $ff-opensans;
+      font-weight: $fw-bold;
+      border-bottom: 12px solid $pale-yellow;
+    }
+
+    & .position {
+      @include font-size(rem(14), rem(20));
+    }
+  }
+}
